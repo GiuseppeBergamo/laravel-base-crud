@@ -9,12 +9,12 @@
     <div class="col-12">
         
         <form action="{{ route('comics.store') }}" method="POST">
-
+            @csrf
             <div class="row text-white">
                 <div class="col-6">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome Fumetto</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nome Fumetto" name="name">
+                        <label for="title" class="form-label">Nome Fumetto</label>
+                        <input type="text" class="form-control" id="title" placeholder="Nome Fumetto" name="title">
                     </div>
                 </div>
                 <div class="col-6">
@@ -26,7 +26,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" id="description" rows="3"></textarea>
+                        <textarea class="form-control" id="description" rows="3" name="description"></textarea>
                     </div>
                 </div>
 
@@ -57,17 +57,17 @@
                 </div>
 
             </div>
-            
-
-        </form>
-
-        <div class="row">
+            <div class="row">
             <div class="col-12 my-2 d-flex justify-content-between">
                 <a href="{{ route('comics.index') }}" class="btn btn-secondary">Torna alla pagina fumetti</a>
                 <button type="submit" class="btn btn-dark">Salva</button>
             </div>
 
         </div>
+
+        </form>
+
+        
     </div>
 </div>
 
